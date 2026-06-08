@@ -1,13 +1,13 @@
-import { BrowserRouter, Routes, Route } from "react-router";
-
+import { BrowserRouter, Routes, Route } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import Header from "./components/Header";
-import Dashboard from "./components/Dashboard";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import TaskList from "./components/TaskList";
+import Header from './components/Header';
+import Dashboard from './components/Dashboard';
+import Login from './components/Login';
+import Register from './components/Register';
+import CreatePost from './components/CreatePost';
+import EditPost from './components/EditPost';
 
 function App() {
   return (
@@ -16,16 +16,17 @@ function App() {
         <div className='container'>
           <Header />
           <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/alltasks" element={<TaskList />} />
+            <Route path='/' element={<Dashboard />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/create' element={<CreatePost />} />
+            <Route path='/edit/:id' element={<EditPost />} />
           </Routes>
         </div>
       </BrowserRouter>
-
       <ToastContainer />
     </>
   );
 }
-export default App
+
+export default App;
